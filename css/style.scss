@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Gudea:400,700);
+
+$background-color-1: #1F222E;
+$background-color-2:#EA5C54;
+$text-color-white1: #e2e2e2;
+$text-color-grey2: #afb1be;
+body {
+  background-color: $background-color-2;
+}
+
+nav {
+  background-color: $background-color-1;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+}
+
+
+
+.logo {
+  color: $text-color-white1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 30px;
+}
+
+.logo a {
+  color: $text-color-white1;
+  text-decoration: none;
+}
+
+.link-custom a {
+  color: $text-color-white1;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+// Login
+
+.card-signin {
+  border: 0;
+  background-color: $background-color-1;
+  top: 250px;
+  color: $text-color-white1;
+}
+
+.card-signin .card-title {
+  color: $text-color-grey2;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  border-radius:50px;
+  background:transparent;
+  padding:10px 50px;
+  border:2px solid $background-color-2 ;
+  color: $background-color-2 ;
+  text-transform:uppercase;
+  font-size:16px;
+  transition-property:background,color;
+  transition-duration:.2s;
+
+  &:hover {
+    color:white;
+    background:$background-color-2 ;
+    cursor:pointer;
+    transition-property:background,color;
+    transition-duration:.2s;
+  }
+}
+
+//Playlists
+
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+  margin:0 auto;
+  padding: $pad-up-dn $pad-left-right;
+}
+
+.row-content {
+  @include zero-margin(20px,0px);
+  border-bottom: 3px ridge;
+  border-color: $background-color-1;
+  min-height:100px;
+}
+
+.responsive {
+  padding: 6px;
+  float: left;
+  width: 20%;
+}
+
+div {
+
+  .gallery {
+    border: 3px solid $background-color-1;
+
+    &:hover {
+      border: 3px solid $text-color-white1;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .desc {
+    padding: 15px;
+    color: $text-color-white1;
+    background-color: $background-color-1;
+    text-align: center;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+  color: $background-color-1;
+}
+
+.footer-des{
+  padding-top: 15px;
+  color: $background-color-1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.album {
+  background-color: $background-color-1;
+  color: $text-color-white1;
+  width: 100%;
+}
+
+.btn-album {
+
+  background: transparent;
+  padding: 10px 60px;
+  border: 2px solid $background-color-2;
+  color: $background-color-2;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition-property: background, color;
+  transition-duration: .2s;
+
+  &:hover {
+    color: white;
+    border-color: $background-color-1;
+    background: $background-color-2;
+    cursor: pointer;
+    transition-property: background, color;
+    transition-duration: .2s;
+  }
+}
+
+.music-list{
+  float: left;
+  border: 0 !important;
+  margin: 0px;
+  padding: 10px 0px;
+  background-color: $background-color-1;
+  color: $text-color-white1;
+
+  &:hover{
+    color: $background-color-1;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .responsive {
+    width: 50%;
+    margin: 6px 0;
+  }
+}
+
+
+@media only screen and (max-width: 576px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
