@@ -1,3 +1,3 @@
 ### WEB Technologies Lab
 ## Ilchyshyn Bohdan
-# link:ilchyshyn-bohdan.github.io
+# ilchyshyn-bohdan.github.io
