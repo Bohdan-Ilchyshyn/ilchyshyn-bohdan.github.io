@@ -19,7 +19,7 @@ nav {
 .logo {
   color: $text-color-white1;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-size: 30px;
 }
 
@@ -181,12 +181,18 @@ div {
     width: 50%;
     margin: 6px 0;
   }
+  //.card-signin{
+  //  top: 250px;
+  //}
 }
 
 
 @media only screen and (max-width: 576px) {
   .responsive {
     width: 100%;
+  }
+  .card-signin{
+    top: 100px;
   }
 }
 

@@ -12,7 +12,7 @@ nav {
 .logo {
   color: #e2e2e2;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-size: 30px;
 }
 
@@ -160,6 +160,10 @@ div .desc {
 @media only screen and (max-width: 576px) {
   .responsive {
     width: 100%;
+  }
+
+  .card-signin {
+    top: 100px;
   }
 }
 @media (min-width: 576px) {
