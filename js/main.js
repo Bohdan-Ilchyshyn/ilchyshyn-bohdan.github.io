@@ -35,18 +35,10 @@ function albumsContent (arr) {
             '<img src=' + arr[i].cover + ' alt="s1" width="600" height="400" id="i">' +
             '</a>' +
             '<div class="desc">' + arr[i].name + '\n' + '</div>' +
-            '<div class="desc2">'
-    if (arr[i].single) {
-      out += 'single'
-    } else {
-      out += 'album'
-    }
-
-    out += '  |  ' +
-        '<div id="alb-"' + i + '></div>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+            '<div class="desc2">'+
+            '</div>' +
+            '</div>' +
+            '</div>';
   }
   document.getElementById('test').innerHTML = out
 }
