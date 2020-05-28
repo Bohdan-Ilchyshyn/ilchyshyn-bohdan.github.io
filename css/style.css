@@ -99,6 +99,16 @@ div .desc {
   background-color: #1F222E;
   text-align: center;
 }
+div .desc2 {
+  padding: 5px;
+  font-size: 15px;
+  color: #afb1be;
+  background-color: #1F222E;
+  text-align: left;
+}
+div .desc2 .name {
+  text-align: right;
+}
 
 .clearfix:after {
   content: "";
