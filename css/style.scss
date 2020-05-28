@@ -119,6 +119,16 @@ div {
     background-color: $background-color-1;
     text-align: center;
   }
+  .desc2 {
+    padding: 5px;
+    font-size: 15px;
+    color: $text-color-grey2;
+    background-color: $background-color-1;
+    text-align: left;
+    .name {
+      text-align: right;
+    }
+  }
 }
 
 .clearfix:after {

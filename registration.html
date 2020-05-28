@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/singup.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -31,7 +32,7 @@
                     <form class="form-signin">
 
                         <div class="form-label-group">
-                            <input type="email" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
                             <label for="inputEmail">Username</label>
                         </div>
 
@@ -49,7 +50,7 @@
                             <input type="password" id="inputPassword2" class="form-control" placeholder="Repeat Password" required>
                             <label for="inputPassword2">Repeat Password</label>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">SignUp</button>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onclick="registration()">SignUp</button>
                         <hr class="my-4">
                     </form>
                 </div>
