@@ -34,43 +34,6 @@ nav {
     text-decoration: none;
 }
 
-.row-content {
-    margin: 0 auto;
-    padding: 20px 0px;
-    border-bottom: 3px ridge;
-    border-color: #1F222E;
-    min-height: 100px;
-}
-
-.responsive {
-    padding: 6px;
-    float: left;
-    width: 20%;
-}
-
-.footer-des {
-    padding-top: 15px;
-    color: #1F222E;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-@media only screen and (max-width: 992px) {
-    .responsive {
-        width: 50%;
-        margin: 6px 0;
-    }
-}
-@media only screen and (max-width: 576px) {
-    .responsive {
-        width: 100%;
-    }
-
-    .card-signin {
-        top: 100px;
-    }
-}
-
 @media (min-width: 768px) {
     .navbar-nav.navbar-center {
         position: absolute;
