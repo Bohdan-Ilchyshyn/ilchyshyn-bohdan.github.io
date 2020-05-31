@@ -3,8 +3,8 @@ import "./login.css"
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import AuthService from "C:/Users/BOHDAN/Documents/GitHub/ilchyshyn-bohdan.github.io/src/services/auth.service"
-import MediaQuery from 'react-responsive'
+import AuthService from "../../services/auth.service"
+
 
 const required = value => {
     if (!value) {
@@ -58,7 +58,7 @@ class Login extends React.Component{
         if (this.checkBtn.context._errors.length === 0) {
             AuthService.login(this.state.username, this.state.password).then(
                 () => {
-                    this.props.history.push("/profile");
+                    this.props.history.push("/");
                     window.location.reload();
                 },
                 error => {
@@ -114,6 +114,8 @@ class Login extends React.Component{
                                         name="username"
                                         value={this.state.username}
                                         onChange={this.onChangeUsername}
+                                        style={{backgroundColor: "#afb1be",
+                                            borderColor: "#1F222E"}}
                                         validations={[required]}
                                     />
                                 </div>
@@ -126,6 +128,8 @@ class Login extends React.Component{
                                         name="password"
                                         value={this.state.password}
                                         onChange={this.onChangePassword}
+                                        style={{backgroundColor: "#afb1be",
+                                            borderColor: "#1F222E"}}
                                         validations={[required]}
                                     />
                                 </div>
@@ -161,43 +165,6 @@ class Login extends React.Component{
                     </div>
 
                 </div>
-                {/*<div className="card" style={{*/}
-                {/*    backgroundColor: "#1F222E",*/}
-                {/*    top: "250px",*/}
-                {/*    border: 0,*/}
-                {/*    color: "#e2e2e2"}}>*/}
-                {/*    <div className="card-body">*/}
-                {/*        <h5 className="card-title text-center">LogIn</h5>*/}
-                {/*        <Form className="form-signin" onSubmit={this.handleLogin()} ref={c=>{this.form = c;}}>*/}
-                {/*            <div className="form-label-group">*/}
-                {/*                <input type="text" id="inputUsername" className="form-control" placeholder="username" required autoFocus/>*/}
-                {/*                <label for="inputUsername">Username</label>*/}
-                {/*            </div>*/}
-
-                {/*            <div className="form-label-group">*/}
-                {/*                <input type="password" id="inputPassword" className="form-control"*/}
-                {/*                       placeholder="Password" required/>*/}
-                {/*                    <label htmlFor="inputPassword">Password</label>*/}
-                {/*            </div>*/}
-
-                {/*            <div className="custom-control custom-checkbox mb-3">*/}
-                {/*                <input type="checkbox" className="custom-control-input" id="customCheck1"/>*/}
-                {/*                    <label className="custom-control-label" htmlFor="customCheck1">Remember*/}
-                {/*                        password</label>*/}
-                {/*            </div>*/}
-
-                {/*            <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit"*/}
-                {/*                    onClick="login()" disabled={this.state.loading}>*/}
-                {/*                {this.state.loading && (*/}
-                {/*                    <span className="spinner-border spinner-border-sm"/>*/}
-                {/*                )}*/}
-                {/*                <span>Sign in</span>*/}
-                {/*            </button>*/}
-
-                {/*            <hr className="my-4"/>*/}
-                {/*        </Form>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
             </div>
         );
     }

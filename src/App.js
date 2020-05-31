@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-// import NavBar from "./components/NavBar/navbar";
 import AuthService from "./services/auth.service"
-import Login from "./components/Login/Login"
 import {Route, Switch, BrowserRouter, Link} from "react-router-dom";
 import Home from "./components/Home/Home";
+import Login from "./components/Login/Login"
+import UserList from "./components/UserList/UserList"
+import Registration from "./components/Registration/registration"
+import UserProfile from "./components/UserProfile/userprofile"
 import "bootstrap/dist/css/bootstrap.min.css";
+
 class App extends React.Component{
 
     constructor(props) {
@@ -17,11 +20,12 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        const user = AuthService.getCurrentUser();
-
-        if (user) {
+        const UserToken = AuthService.getUserToken();
+        const UserName = AuthService.getUserName();
+        if (UserToken) {
             this.setState({
-                currentUser: user
+                UserToken: UserToken,
+                UserName: UserName
             });
         }
     }
@@ -31,7 +35,7 @@ class App extends React.Component{
     }
 
     render() {
-        const {currentUser} = this.state;
+        const {UserToken, UserName} = this.state;
         return (
 
             <BrowserRouter>
@@ -49,48 +53,37 @@ class App extends React.Component{
                         </button>
 
                         <div className="collapse navbar-collapse custom-link" id="navbarToggler">
-                            <ul className="nav navbar-nav navbar-center">
-                                <li className="nav-item text-center">
-                                    <div className="nav-link text-center">
-                                        <Link to="/">
-                                            Main
-                                        </Link>
-                                    </div>
-                                </li>
-                                <li className="nav-item text-center">
-                                    {/*<a className="nav-link text-center" href="./playlists.html">Library</a>*/}
-                                    <div className="nav-link text-center">
-                                        <Link to="/playlist">Library</Link>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            {/*<li className="nav-item text-center">*/}
-                            {/*    <div className="nav-link text-center">*/}
-                            {/*        <Link to="/login">*/}
-                            {/*            SingIn*/}
-                            {/*        </Link>*/}
-                            {/*    </div>*/}
-                            {/*</li>*/}
-                            {/*<li className="nav-item text-center">*/}
-                            {/*    /!*<a className="nav-link text-center" href="./playlists.html">Library</a>*!/*/}
-                            {/*    <div className="nav-link text-center">*/}
-                            {/*        <Link to="/registration">SingUp</Link>*/}
-                            {/*    </div>*/}
-                            {/*</li>*/}
-                            {currentUser ? (
-                                <ul className="nav navbar-nav ml-auto">
+                            {UserToken && (
+                                <ul className="nav navbar-nav navbar-center">
                                     <li className="nav-item text-center">
                                         <div className="nav-link text-center">
-                                            <Link to="/login">
-                                                {currentUser}
+                                            <Link to="/">
+                                                Main
                                             </Link>
                                         </div>
                                     </li>
                                     <li className="nav-item text-center">
                                         {/*<a className="nav-link text-center" href="./playlists.html">Library</a>*/}
                                         <div className="nav-link text-center">
-                                            <a onClick={this.logout}>Logout</a>
+                                            <Link to="/userlist">UserList</Link>
+                                        </div>
+                                    </li>
+                                </ul>
+                            )}
+
+                            {UserToken ? (
+                                <ul className="nav navbar-nav ml-auto">
+                                    <li className="nav-item text-center">
+                                        <div className="nav-link text-center">
+                                            <Link to="/profile">
+                                                {UserName}
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li className="nav-item text-center">
+                                        {/*<a className="nav-link text-center" href="./playlists.html">Library</a>*/}
+                                        <div className="nav-link text-center">
+                                            <a href="/" onClick={this.logout}>Logout</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -104,7 +97,6 @@ class App extends React.Component{
                                         </div>
                                     </li>
                                     <li className="nav-item text-center">
-                                        {/*<a className="nav-link text-center" href="./playlists.html">Library</a>*/}
                                         <div className="nav-link text-center">
                                             <Link to="/registration">SingUp</Link>
                                         </div>
@@ -113,13 +105,14 @@ class App extends React.Component{
                             )}
                         </div>
                     </nav>
-                    <div className="container-xl">
-                        <div className="row">
+                    <div className="container-xl ">
                             <Switch>
                                 <Route exact path="/login" component={Login}/>
+                                <Route exact path="/registration" component={Registration}/>
                                 <Route exact path={["/", "/home"]} component={Home}/>
+                                <Route exact path="/userlist" component={UserList}/>
+                                <Route exact path="/profile" component={UserProfile}></Route>
                             </Switch>
-                        </div>
                     </div>
 
                 </div>
