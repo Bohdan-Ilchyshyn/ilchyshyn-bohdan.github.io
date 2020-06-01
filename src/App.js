@@ -4,10 +4,12 @@ import AuthService from "./services/auth.service"
 import {Route, Switch, BrowserRouter, Link} from "react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login"
+import Album from "./components/Album/album"
 import UserList from "./components/UserList/UserList"
 import Registration from "./components/Registration/registration"
 import UserProfile from "./components/UserProfile/userprofile"
 import "bootstrap/dist/css/bootstrap.min.css";
+import Profile from "./components/ABProfile/profile";
 
 class App extends React.Component{
 
@@ -109,9 +111,11 @@ class App extends React.Component{
                             <Switch>
                                 <Route exact path="/login" component={Login}/>
                                 <Route exact path="/registration" component={Registration}/>
-                                <Route exact path={["/", "/home"]} component={Home}/>
+                                <Route exact path="/" component={Home}/>
                                 <Route exact path="/userlist" component={UserList}/>
-                                <Route exact path="/profile" component={UserProfile}></Route>
+                                <Route exact path="/profile" component={UserProfile}/>
+                                <Route exact path="/album/:albumId" component={Album}/>
+                                <Route exact path="/pr/:t/:artistId" component={Profile}/>
                             </Switch>
                     </div>
 
